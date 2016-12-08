@@ -16,6 +16,7 @@ import { NavigaionComponent } from './navigaion/navigaion.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BasketComponent } from './basket/basket.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BasketComponent } from './basket/basket.component';
     NavigaionComponent,
     FooterComponent,
     SidebarComponent,
-    BasketComponent
+    BasketComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

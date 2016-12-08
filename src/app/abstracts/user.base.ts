@@ -1,17 +1,13 @@
-﻿import { Component, OnInit } from '@angular/core';
+import {User} from "../_models/user";
+import {UserService} from "../_services/user.service";
+import {arrays} from "../_helpers/arrays";
+import {OnInit} from "@angular/core";
 
-import { User } from '../_models';
-import { UserService } from '../_services/index';
-import { arrays } from '../_helpers/arrays';
-@Component({
-    templateUrl: '../home/home.component.html'
-})
-
-export class HomeComponent implements OnInit {
+export abstract class UserBase implements OnInit{
   user: User[] = [];
   authenticated: boolean = false;
 
-  constructor(private userService: UserService) {
+  constructor(protected userService: UserService) {
     this.userService.userEvent.subscribe(data => {
       this.getUser();
     });
@@ -35,5 +31,4 @@ export class HomeComponent implements OnInit {
       this.authenticated = false;
     }
   }
-
 }
