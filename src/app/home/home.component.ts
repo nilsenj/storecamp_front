@@ -8,32 +8,19 @@ import { arrays } from '../_helpers/arrays';
 })
 
 export class HomeComponent implements OnInit {
-  user: User[] = [];
-  authenticated: boolean = false;
+    users: User[] = [];
 
-  constructor(private userService: UserService) {
-    this.userService.userEvent.subscribe(data => {
-      this.getUser();
-    });
-  }
+    constructor(private userService: UserService) { }
 
-  ngOnInit() {
-    // get users from secure api end point
-    this.getUser();
-  }
+    ngOnInit() {
+      if (this.userService.token) {
 
-  getUser() {
-    // get users from secure api end point
-    if (this.userService.token) {
-      this.userService.getAuthenticatedUser()
-        .subscribe(users => {
-          this.user = arrays.transformToArray(users);
-          this.authenticated = true;
-        });
-    } else {
-      this.user = [];
-      this.authenticated = false;
+        // get users from secure api end point
+        this.userService.getUsers()
+          .subscribe(users => {
+            this.users = arrays.transformToArray(users);
+          });
+      }
     }
-  }
 
 }

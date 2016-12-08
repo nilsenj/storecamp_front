@@ -1,12 +1,21 @@
 <div id="wrapper">
   <div class="overlay"></div>
   <app-navigaion [user]="user" [authenticated]="authenticated"></app-navigaion>
-  <app-sidebar></app-sidebar>
+  <div class="" style="height: 20px;
+    width: 100%;
+    padding: 0;
+    background-color: #eceeef;"></div>
+
   <!-- Page Content -->
   <div id="page-content-wrapper">
-    <div class="jumbotron">
-      <div class="container">
-          <router-outlet></router-outlet>
+    <div class="" style="width: 100%;
+    padding: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    background-color: #eceeef;">
+      <div class="container-fluid">
+        <app-sidebar></app-sidebar>
+        <router-outlet></router-outlet>
       </div>
     </div>
     <div class="container">
