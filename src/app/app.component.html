@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<div id="wrapper">
+  <div class="overlay"></div>
+  <app-navigaion [user]="user" [authenticated]="authenticated"></app-navigaion>
+  <app-sidebar></app-sidebar>
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="jumbotron">
+      <div class="container">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- /#wrapper -->

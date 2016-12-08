@@ -1,0 +1,86 @@
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand text-info">
+    <i class="glyphicon glyphicon-phone"></i>
+    <span class="text-xs">(044) 537-02-22</span>
+  </a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/credit']">Credit</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/warranty']">Warranty</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/contacts']">Contacts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/about']">About</a>
+    </li>
+  </ul>
+  <div class="float-xs-right">
+    <ul class="nav navbar-nav">
+      <li class="nav-item dropdown" *ngIf="authenticated">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+          class="text-muted">Hello </span> ,{{user.name}}</a>
+        <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+          <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
+          <a class="dropdown-item" [routerLink]="['/history']">Orders History</a>
+          <a class="dropdown-item" [routerLink]="['/login']">Logout</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="!authenticated">
+          <a class="nav-link" [routerLink]="['/register']">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="!authenticated">
+      <a class="nav-link">|</a>
+      </li>
+      <li class="nav-item" *ngIf="!authenticated">
+      <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  <a class="navbar-brand" href="#"><img src="../../assets/Logo!.png" alt="" class="img-responsive"></a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/ru']">RU</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">|</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/warranty']">ENG</a>
+    </li>
+    <div class="form-inline nav-item pull-right">
+      <form class="navbar-form active" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control pull-right" style="width: 300px; margin-right: 1px; border: 1px solid #ddd; background-color: #e5e5e5;" placeholder="Search">
+          <span class="input-group-btn">
+							<button class="btn btn-default" style="padding: 1px">
+							<li class="dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="categoryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="text-muted">Searching Category</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                  <a class="dropdown-item" [routerLink]="['/pc']">PC</a>
+                  <a class="dropdown-item" [routerLink]="['/laptops']">Laptops</a>
+                  <a class="dropdown-item" [routerLink]="['/smartphones']">SmartPhones</a>
+                </div>
+              </li>
+							</button>
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search</span>
+								</span>
+							</button>
+						</span>
+        </div>
+      </form>
+    </div>
+  </ul>
+<app-basket></app-basket>
+</nav>
