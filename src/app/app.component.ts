@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "./_models/user";
-import {UserService} from "./_services/user.service";
-import {arrays} from "./_helpers/arrays";
-import {UserBase} from "./abstracts/user.base";
+import {User} from './_models/user';
+import {UserService} from './_services/user.service';
+import {arrays} from './_helpers/arrays';
+import {UserBase} from './abstracts/user.base';
 
 @Component({
   selector: 'app-root',
