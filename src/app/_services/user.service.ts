@@ -64,7 +64,7 @@ export class UserService {
         let options = new RequestOptions({ headers: headers });
 
         // get users from api
-        return this.http.get('http://storecamp.io//api/users', options)
+        return this.http.get('http://storecamp.io/api/users', options)
             .map((response: Response) => response.json());
   }
 
@@ -74,7 +74,7 @@ export class UserService {
     let options = new RequestOptions({ headers: headers });
 
     // get users from api
-    return this.http.post('http://storecamp.io//api/getUser',null, options)
+    return this.http.post('http://storecamp.io/api/getUser',null, options)
       .map((response: Response) => response.json());
   }
   logout(): void {

@@ -9,6 +9,7 @@ import {UserBase} from './abstracts/user.base';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent extends UserBase {
   constructor(protected userService: UserService) {
     super(userService);
